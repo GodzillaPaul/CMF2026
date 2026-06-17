@@ -1,1 +1,212 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2026 CMF 濟南山東手冊</title>
+  <meta name="description" content="2026 CMF 濟南手機手冊：首頁、行程、景點/餐廳、課程、房間查詢。">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <button class="top-icon" id="backHome" type="button" aria-label="回首頁" hidden>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <div class="app-title" aria-live="polite">
+        <span id="pageEyebrow">2026.07.14 - 07.21</span>
+        <b id="pageTitle">首頁</b>
+      </div>
+      <button class="top-icon" id="prepShortcut" type="button" aria-label="行前準備">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 11l2 2 4-4"/><path d="M20 6 9 17l-5-5"/><path d="M3 20h18"/></svg>
+      </button>
+    </div>
+  </header>
 
+  <main id="top">
+    <section class="hero app-page active" data-page="overview" aria-label="CMF 濟南山東手冊封面">
+      <img class="hero-bg" src="assets/images/user-src/cover-jinan-mobile.jpeg" alt="這就是山東濟南手機封面" width="1067" height="1600" fetchpriority="high" decoding="async">
+      <h1 class="sr-only">CMF 濟南山東手冊</h1>
+    </section>
+
+    <section id="overview" class="home app-page active" data-page="overview">
+      <div class="wrap">
+        <div class="home-dashboard reveal">
+          <div class="home-intro">
+          <span class="eyebrow">2026.07.14 - 07.21</span>
+            <h1>CMF 濟南 2026</h1>
+            <p class="home-copy">7/14-7/21｜青島進出、泰山行程、濟南 CMF 課程。</p>
+            <div class="home-actions">
+            <a class="btn" href="#itinerary">看行程</a>
+              <a class="btn ghost" href="#course">查課程</a>
+            </div>
+          </div>
+          <aside class="home-panel" aria-label="旅程摘要">
+          <div class="countdown">
+            <span>Departure</span>
+            <b id="countdown">計算中</b>
+          </div>
+            <div class="home-metrics">
+            <div class="metric"><b>8 天</b><span>7/14-7/21</span></div>
+            <div class="metric"><b>3 城</b><span>青島、泰安、濟南</span></div>
+            <div class="metric"><b>3 天</b><span>CMF 課程</span></div>
+            <div class="metric"><b>86 位</b><span>名單查詢</span></div>
+          </div>
+        </aside>
+      </div>
+        <div class="quick-grid">
+        <a class="quick-card accent reveal" href="#itinerary">
+          <strong>今日行程</strong>
+          <span id="todayHint">查看每日交通、景點、用餐與課程。</span>
+        </a>
+        <a class="quick-card reveal" href="#places">
+          <strong>地點導航</strong>
+          <span>景點、餐廳、購物點，附地址與地圖。</span>
+        </a>
+        <a class="quick-card reveal" href="#room">
+          <strong>房間查詢</strong>
+          <span>輸入姓名查編號、單位與住宿飯店。</span>
+        </a>
+        <a class="quick-card reveal" href="#prep">
+          <strong>行前準備</strong>
+          <span>證件、支付、網路與泰山裝備清單。</span>
+        </a>
+      </div>
+      </div>
+    </section>
+
+    <section id="itinerary" class="section band-dark app-page" data-page="itinerary">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <span class="kicker">Itinerary</span>
+            <h2>8 天行程</h2>
+          </div>
+          <p>按天查看交通、景點、用餐與 CMF 課程。</p>
+        </div>
+        <div class="toolbar reveal">
+          <input class="search" id="daySearch" type="search" placeholder="搜尋日期、景點、餐廳、航班或關鍵字">
+          <div class="segmented" id="dayFilters" aria-label="行程篩選">
+            <button class="active" data-filter="all" type="button">全部</button>
+            <button data-filter="move" type="button">交通</button>
+            <button data-filter="tour" type="button">景點</button>
+            <button data-filter="course" type="button">課程</button>
+            <button data-filter="food" type="button">用餐</button>
+          </div>
+        </div>
+        <div class="day-list" id="dayList"></div>
+        <div class="empty-state" id="dayEmpty" hidden>找不到符合的行程</div>
+      </div>
+    </section>
+
+    <section id="course" class="section app-page" data-page="course">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <span class="kicker">Conference Agenda</span>
+            <h2>CMF 課程</h2>
+          </div>
+          <p>7/18-7/20｜山東國際博覽會議中心。可搜尋講題或講者。</p>
+        </div>
+        <div class="course-layout">
+          <div>
+            <div class="toolbar reveal">
+              <input class="search" id="courseSearch" type="search" placeholder="搜尋講題、講者、AI、高客、財稅、團隊">
+              <div class="segmented" id="courseFilters" aria-label="課程日期篩選">
+                <button class="active" data-course="all" type="button">全部</button>
+                <button data-course="d5" type="button">7/18</button>
+                <button data-course="d6" type="button">7/19</button>
+                <button data-course="d7" type="button">7/20</button>
+              </div>
+            </div>
+            <div class="course-list" id="courseList"></div>
+            <div class="empty-state" id="courseEmpty" hidden>找不到符合的課程</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="places" class="section app-page" data-page="places">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <span class="kicker">Stay · Dining · Sights</span>
+            <h2>景點/餐廳</h2>
+          </div>
+          <p>餐廳、景點、購物點。可複製地址或開地圖。</p>
+        </div>
+        <div class="toolbar reveal">
+          <input class="search" id="placeSearch" type="search" placeholder="搜尋餐廳、景點、購物或城市">
+          <div class="segmented" id="placeFilters" aria-label="地點分類">
+            <button class="active" data-place="all" type="button">全部</button>
+            <button data-place="food" type="button">美食</button>
+            <button data-place="sight" type="button">景點</button>
+            <button data-place="shop" type="button">購物</button>
+          </div>
+        </div>
+        <div class="data-grid" id="placeList"></div>
+        <div class="empty-state" id="placeEmpty" hidden>找不到符合的地點</div>
+      </div>
+    </section>
+
+    <section id="room" class="section app-page" data-page="room">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <span class="kicker">Roster Lookup</span>
+            <h2>房間</h2>
+          </div>
+          <p>輸入姓名，查編號、單位與住宿飯店。</p>
+        </div>
+        <div class="lookup-grid">
+          <div class="tool-surface reveal">
+            <input class="search" id="nameSearch" type="search" placeholder="輸入姓名，例如：許智雄">
+            <div class="suggestions" id="suggestions"></div>
+          </div>
+          <div class="result-card reveal" id="rosterResult">
+            <div class="result-name">尚未查詢</div>
+            <div>輸入姓名查編號、單位、飯店。</div>
+          </div>
+        </div>
+        <h3 class="subhead reveal">住宿飯店</h3>
+        <div class="data-grid room-hotels" id="hotelList"></div>
+      </div>
+    </section>
+
+    <section id="prep" class="section app-page" data-page="prep">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <span class="kicker">Before You Go</span>
+            <h2>行前準備</h2>
+          </div>
+          <p>證件、支付、網路、泰山裝備。</p>
+        </div>
+        <div class="check-grid reveal" id="checkList"></div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-tabs" id="bottomTabs" aria-label="App 分頁" role="tablist">
+    <button class="app-tab active" type="button" data-tab="overview" role="tab" aria-selected="true">
+      <span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></span>首頁
+    </button>
+    <button class="app-tab" type="button" data-tab="itinerary" role="tab" aria-selected="false">
+      <span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2v4"/><path d="M16 2v4"/><path d="M3 10h18"/><path d="M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2z"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/></svg></span>行程
+    </button>
+    <button class="app-tab" type="button" data-tab="places" role="tab" aria-selected="false">
+      <span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-4.4 7-11a7 7 0 1 0-14 0c0 6.6 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>景點/餐廳
+    </button>
+    <button class="app-tab" type="button" data-tab="course" role="tab" aria-selected="false">
+      <span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"/><path d="M8 6h8"/><path d="M8 10h7"/></svg></span>課程
+    </button>
+    <button class="app-tab" type="button" data-tab="room" role="tab" aria-selected="false">
+      <span aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="3.5"/><path d="m10 13 8-8"/><path d="m16 7 2 2"/><path d="m14 9 2 2"/></svg></span>房間
+    </button>
+  </nav>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">已複製</div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
