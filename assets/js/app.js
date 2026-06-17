@@ -190,14 +190,6 @@
     const $$ = (selector) => [...document.querySelectorAll(selector)];
     const esc = (value) => String(value).replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
     const appPages = ["overview", "itinerary", "places", "course", "room", "prep"];
-    const pageMeta = {
-      overview: ["2026.07.14 - 07.21", "首頁"],
-      itinerary: ["Itinerary", "行程"],
-      places: ["Stay · Dining · Sights", "景點/餐廳"],
-      course: ["Conference Agenda", "課程"],
-      room: ["Roster Lookup", "房間"],
-      prep: ["Before You Go", "行前準備"]
-    };
 
     function normalized(text) {
       return String(text).toLowerCase().replace(/\s+/g, "");
@@ -494,10 +486,6 @@
     }
 
     function updateTopbar(active) {
-      const meta = pageMeta[active] || pageMeta.overview;
-      $("#pageEyebrow").textContent = meta[0];
-      $("#pageTitle").textContent = meta[1];
-      $("#backHome").hidden = active === "overview";
       $("#prepShortcut").classList.toggle("is-active", active === "prep");
     }
 
@@ -531,7 +519,6 @@
       $$("#bottomTabs .app-tab").forEach((button) => {
         button.addEventListener("click", () => setActivePage(button.dataset.tab));
       });
-      $("#backHome").addEventListener("click", () => setActivePage("overview"));
       $("#prepShortcut").addEventListener("click", () => setActivePage("prep"));
       document.addEventListener("click", (event) => {
         const link = event.target.closest('a[href^="#"]');
