@@ -4,14 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>2026 CMF 濟南山東手冊</title>
-  <meta name="description" content="2026 CMF 濟南手機手冊：首頁、行程、景點/餐廳、課程、房間查詢。">
+  <meta name="description" content="2026 CMF 濟南手機手冊：首頁、行程、景點/餐廳、課程、住宿查詢。">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/user-src/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/images/user-src/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/user-src/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
       <a class="header-brand" href="#overview" aria-label="回首頁">
-        <img src="assets/images/user-src/header-cmf-jinan.png" alt="逐浪泉城 CMF 2026 07.14-07.21" width="1981" height="794">
+        <img class="brand-mark" src="assets/images/user-src/logo-cmf-official.png" alt="" width="512" height="512">
+        <span class="brand-title">逐浪泉城</span>
+        <span class="brand-divider" aria-hidden="true"></span>
+        <span class="brand-event">
+          <b>CMF 2026</b>
+          <small>07.14 - 07.21</small>
+        </span>
       </a>
       <button class="prep-button" id="prepShortcut" type="button" aria-label="行前準備">
         行前準備
@@ -29,38 +38,49 @@
       <div class="wrap">
         <div class="home-dashboard reveal">
           <div class="home-intro">
-          <span class="eyebrow">2026.07.14 - 07.21</span>
-            <h1>CMF 濟南 2026</h1>
-            <p class="home-copy">7/14-7/21｜青島進出、泰山行程、濟南 CMF 課程。</p>
+            <span class="eyebrow">Trip Overview</span>
+            <h1>旅程總覽</h1>
+            <p class="home-copy">青島進出，經泰安登泰山，濟南參加 7/18-7/20 CMF 課程。</p>
             <div class="home-actions">
-            <a class="btn" href="#itinerary">看行程</a>
-              <a class="btn ghost" href="#course">查課程</a>
+              <a class="btn" href="#itinerary">看行程</a>
+              <a class="btn ghost" href="#places">景點/餐廳</a>
             </div>
           </div>
-          <aside class="home-panel" aria-label="旅程摘要">
-          <div class="countdown">
-            <span>Departure</span>
-            <b id="countdown">計算中</b>
-          </div>
-            <div class="home-metrics">
-            <div class="metric"><b>8 天</b><span>7/14-7/21</span></div>
-            <div class="metric"><b>3 城</b><span>青島、泰安、濟南</span></div>
-            <div class="metric"><b>3 天</b><span>CMF 課程</span></div>
-            <div class="metric"><b>86 位</b><span>名單查詢</span></div>
-          </div>
+          <aside class="home-panel" aria-label="出發資訊">
+            <div class="countdown">
+              <span>出發倒數</span>
+              <b id="countdownDays">計算中</b>
+              <div class="countdown-clock" id="countdownClock">-- 時 -- 分 -- 秒</div>
+            </div>
+            <div class="flight-list">
+              <div class="flight-card">
+                <span>去程</span>
+                <b>SC4086｜7/14 16:45</b>
+                <p>桃園第二航廈 → 青島膠東機場 19:15</p>
+              </div>
+              <div class="flight-card">
+                <span>回程</span>
+                <b>SC4085｜7/21 13:25</b>
+                <p>青島膠東機場 → 桃園第二航廈 15:45</p>
+              </div>
+            </div>
         </aside>
       </div>
         <div class="quick-grid">
         <a class="quick-card accent reveal" href="#itinerary">
-          <strong>今日行程</strong>
+          <strong>每日行程</strong>
           <span id="todayHint">查看每日交通、景點、用餐與課程。</span>
         </a>
         <a class="quick-card reveal" href="#places">
-          <strong>地點導航</strong>
+          <strong>景點/餐廳</strong>
           <span>景點、餐廳、購物點，附地址與地圖。</span>
         </a>
+        <a class="quick-card reveal" href="#course">
+          <strong>課程</strong>
+          <span>7/18-7/20 課表、講題與講者查詢。</span>
+        </a>
         <a class="quick-card reveal" href="#room">
-          <strong>房間查詢</strong>
+          <strong>住宿</strong>
           <span>輸入姓名查編號、單位與住宿飯店。</span>
         </a>
         <a class="quick-card reveal" href="#prep">
@@ -115,6 +135,11 @@
                 <button data-course="d7" type="button">7/20</button>
               </div>
             </div>
+            <button class="featured-jump reveal" id="featuredCourseJump" type="button">
+              <span>本團主角</span>
+              <b>7/19 10:20｜吳修毅</b>
+            </button>
+            <p class="course-note reveal">課程與行程可能依大會及現場狀況調整；吳修毅仍是本場主角，請優先留意 7/19 10:20 這堂課。</p>
             <div class="course-list" id="courseList"></div>
             <div class="empty-state" id="courseEmpty" hidden>找不到符合的課程</div>
           </div>
@@ -150,13 +175,13 @@
         <div class="section-head reveal">
           <div>
             <span class="kicker">Roster Lookup</span>
-            <h2>房間</h2>
+            <h2>住宿</h2>
           </div>
           <p>輸入姓名，查編號、單位與住宿飯店。</p>
         </div>
         <div class="lookup-grid">
           <div class="tool-surface reveal">
-            <input class="search" id="nameSearch" type="search" placeholder="輸入姓名，例如：許智雄">
+            <input class="search" id="nameSearch" type="search" placeholder="輸入姓名，例如：鄭占禮">
             <div class="suggestions" id="suggestions"></div>
           </div>
           <div class="result-card reveal" id="rosterResult">
@@ -197,7 +222,7 @@
       <span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"/><path d="M8 6h8"/><path d="M8 10h7"/></svg></span>課程
     </button>
     <button class="app-tab" type="button" data-tab="room" role="tab" aria-selected="false">
-      <span aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="3.5"/><path d="m10 13 8-8"/><path d="m16 7 2 2"/><path d="m14 9 2 2"/></svg></span>房間
+      <span aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10.5V20h14v-9.5"/><path d="M8 20v-5.5h8V20"/><path d="M9.5 9.5h5"/></svg></span>住宿
     </button>
   </nav>
 

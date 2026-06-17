@@ -28,6 +28,7 @@
     };
 
     const tripStart = new Date(2026, 6, 14);
+    const departureTime = new Date(2026, 6, 14, 16, 45);
     const tripEnd = new Date(2026, 6, 21);
 
     const days = [
@@ -57,19 +58,19 @@
         ["下午", "曲水亭街、大明湖、超然樓", "老城、水巷、夜景。"],
         ["晚宴", "山東維景大酒店 CMF 晚宴", ""]
       ]},
-      { id: "d5", no: "DAY 5", date: "2026.07.18（六）", key: "2026-07-18", title: "CMF DAY 1", tone: "開幕式、頒獎、全日課程。", img: image.d5, tags: ["course", "food"], items: [
+      { id: "d5", no: "DAY 5", date: "2026.07.18（六）", key: "2026-07-18", title: "CMF DAY 1", tone: "開篇：探祕保險新生態。", img: image.d5, tags: ["course", "food"], items: [
         ["07:00", "飯店早餐", "飯店餐廳自行用餐。"],
         ["08:30-18:00", "山東國際博覽會議中心 CMF 課程", "開幕式、頒獎、課程。"],
         ["午餐", "中午提供便當餐盒", "課程場地用餐。"],
         ["晚餐", "晚餐自理", "飯店附近用餐。"]
       ]},
-      { id: "d6", no: "DAY 6", date: "2026.07.19（日）", key: "2026-07-19", title: "CMF DAY 2", tone: "個人行銷、組織發展。", img: image.d6, tags: ["course", "food"], items: [
+      { id: "d6", no: "DAY 6", date: "2026.07.19（日）", key: "2026-07-19", title: "CMF DAY 2", tone: "中篇：探求保險新生態之路。", img: image.d6, tags: ["course", "food"], items: [
         ["07:00", "飯店早餐", "飯店餐廳自行用餐。"],
         ["08:30-17:00", "山東國際博覽會議中心 CMF 課程", "全日課程。"],
         ["午餐", "中午提供便當餐盒", "課程場地用餐。"],
         ["晚餐", "晚餐自理", "飯店附近用餐。"]
       ]},
-      { id: "d7", no: "DAY 7", date: "2026.07.20（一）", key: "2026-07-20", title: "CMF DAY 3", tone: "AI、通膨、財稅、閉幕式。", img: image.d7, tags: ["course", "food"], items: [
+      { id: "d7", no: "DAY 7", date: "2026.07.20（一）", key: "2026-07-20", title: "CMF DAY 3", tone: "尾篇：探討保險新生態之策。", img: image.d7, tags: ["course", "food"], items: [
         ["07:00", "飯店早餐", "飯店餐廳自行用餐。"],
         ["08:30-17:30", "山東國際博覽會議中心 CMF 課程", "課程與閉幕式。"],
         ["午餐", "中午提供便當餐盒", "課程場地用餐。"],
@@ -83,49 +84,53 @@
     ];
 
     const courses = [
-      { id: "d5", title: "DAY 5｜7/18 開幕式與 CMF 課程", rows: [
-        ["08:30-09:00", "CMF22 屆主禮嘉賓及冠軍聯盟入場儀式（開幕式）", ""],
+      { id: "d5", title: "DAY 5｜7/18 開篇：探祕保險新生態", rows: [
+        ["08:30-09:00", "第二十三屆國際保險精英圓桌大會（CMF）開幕式", "CMF 第 23 屆主禮嘉賓及 CMF 冠軍聯盟入場儀式"],
         ["09:00-09:20", "主禮嘉賓致辭", ""],
-        ["09:20-09:40", "2025 新浪保險年度經理人頒獎典禮", ""],
-        ["09:40-10:00", "CMF 國際十大保險明星頒獎典禮", ""],
-        ["10:00-10:30", "TMC 國際千萬圓桌大獎頒獎典禮", ""],
-        ["10:30-11:30", "傳統文化在現代市場和生活中的應用", "金海鋒（中國文化網絡傳播研究院院長）"],
-        ["11:30-12:00", "頂級客戶的經營與破圈", "張麗莎（單一客戶保費 1 億，全國最高紀錄）"],
-        ["12:00-13:30", "午餐休息", ""],
-        ["13:30-14:20", "企業家客戶（高淨值客戶）的銷售邏輯", "曹紀平（TMC 千萬圓桌會員，連續 22 年中國人壽山東省銷售冠軍）"],
-        ["14:20-15:10", "AI 時代下保險人如何破局", "葉雲燕（CMF 冠軍聯盟主席，大會常務副主席）"],
-        ["15:10-16:00", "中高端客戶的深度服務解析", "郭旦梅（國壽名人堂終身會員，中國人壽總部精英俱樂部會長）"],
-        ["16:00-16:15", "休息", ""],
-        ["16:15-17:10", "低利率時代下年金銷售突圍的策略", "程智雄（平安全國百強導師，羅輯思維-得到精品設計師）"],
-        ["17:10-18:00", "信念的力量——提升「信」質生產", ""]
-      ]},
-      { id: "d6", title: "DAY 6｜7/19 個人創新行銷與組織發展", rows: [
-        ["08:30-09:20", "創新活動經營，加速大保單拓展", "王堯（上海平安第一名）"],
-        ["09:20-10:10", "升級經營模式，持續開拓高客", "鄭海兵（中國人壽連續多年全國第一，TMC 千萬圓桌會員）"],
+        ["09:20-09:40", "「CMF 國際十大保險明星」頒獎典禮", "開幕典禮"],
+        ["09:40-10:10", "TMC 國際千萬圓桌大獎頒獎典禮", "開幕典禮"],
         ["10:10-10:20", "休息", ""],
-        ["10:20-11:00", "健康險銷售賦能", "易容（健康風險管理行業創始人，「健康險女王」）"],
-        ["11:10-12:00", "直播獲客 2 千萬的邏輯", "馬曉芳（直播達人，互聯網獲客總保費 2 千萬）"],
+        ["10:20-12:00", "百歲時代：生命科學重構健康與財富的底層邏輯", "尹燁（華大集團 CEO、生命科學科普領軍人）"],
         ["12:00-13:30", "午餐休息", ""],
-        ["13:30-14:20", "浙江優秀團隊長論壇", "王國良（CMF 冠軍聯盟會員，平安人壽資深總監）／王利忠（中國人壽高級區域總監）"],
-        ["14:20-15:00", "新生代團隊自主經營的關鍵要素", "李鋒（瑞眾人壽總公司資政委員，2024-2025 連續兩年達成億元總監）"],
-        ["15:00-15:10", "休息", ""],
-        ["15:10-15:40", "十連冠團隊的打造與精進", "拿督斯里・彭建偉（連續 15 年榮登全馬壽險組織及個人總冠軍）"],
-        ["15:40-16:30", "如何增新增優", "李子豪（中國人壽廣東最年輕的區域總監）"],
-        ["16:30-17:00", "以科學管理，增強團隊的凝聚力", "鄭美懿（富邦人壽資深總監）"]
+        ["13:30-14:20", "時代趨勢－自媒體事件行銷", "張一凡（自媒體事件行銷第一人，頭條熱搜事件幕後策劃人）"],
+        ["14:20-15:10", "壽險常青樹——超高淨值客戶銷售解析", "褚東東（「中國保險件數王」，中國人壽頂尖行銷精英）"],
+        ["15:10-15:30", "休息", ""],
+        ["15:30-16:20", "從券商首席到頂級銷售的進階之路", "唐思思（平安磐石家族辦公室合夥人，平安上海高才標杆）"],
+        ["16:20-17:10", "財務視角下的保險本質", "齊昊（財務專家、實戰派 CFO、知名講師）"],
+        ["17:10-17:30", "課程總結", ""]
       ]},
-      { id: "d7", title: "DAY 7｜7/20 壓軸課程與閉幕式", rows: [
-        ["08:30-09:10", "AI 時代，智行合一", "肖利華（阿里巴巴集團原副總裁）"],
-        ["09:10-10:10", "通膨時代，構建財富新秩序", "林海川（CMF 大會創始人之一）"],
+      { id: "d6", title: "DAY 6｜7/19 中篇：探求保險新生態之路", rows: [
+        ["上午專場", "個人行銷新技能專場／組織發展專場", "版主：魏建宏、安建平"],
+        ["08:30-09:20", "長期主義：20 年保險路，從個人績優到團隊領袖", "于忠濱（太平人壽連續二十年營業區、直轄部全省第一）"],
+        ["09:20-10:10", "團隊經營與績優文化建設", "王利忠（中國人壽高級區域總監）"],
         ["10:10-10:20", "休息", ""],
-        ["10:20-11:05", "如何打造高績效優質團隊", "羅淞元（CMF 終身會員，TMC 至尊會員）"],
-        ["11:05-12:00", "以「人民的名義」，創「蠻好的人生」", "盧小美（CMF 國際保險精英圈奧委會主席，太平洋總公司累計 100 次全國銷售冠軍）"],
+        ["10:20-11:10", "00 後組織發展：年輕一代的團隊成長密碼", "吳修毅（中國臺灣金融保險產業新生代領導者，富邦人壽極具代表性的年輕企業家）"],
+        ["11:10-12:00", "投保心理學：洞察人性，經營未來——AI 保險時代下的破局", "羅淑瓊（香港中銀人壽資深總監，PPGroup 創辦人之一，團隊規模超過 1200 人）"],
         ["12:00-13:30", "午餐休息", ""],
-        ["13:30-14:20", "冠軍團隊的規劃與策略-隨處可見", "于忠濱（連續二十年區、直轄部全省第一）"],
-        ["14:20-15:00", "100% 全線上管理助力團隊業績十倍增長", "張海燕（明亞全國連續多年雙冠軍）"],
-        ["15:00-15:10", "休息", ""],
-        ["15:10-16:00", "經「贏」有道，財稅無憂", "范敏逸（北京大學稅務碩士導師）"],
-        ["16:00-17:00", "尋找壽險業的新質生產力", "CMF 主席團（盧小美、李江紅、葉雲燕、魏建宏、呂啟彪、吳征宇、王妮、韓綱等）"],
-        ["17:00-17:30", "精彩再現，再見杭州，相約濟南——閉幕式", ""]
+        ["下午專場", "CMF 行銷專場", "版主：呂啟彪、朱磊"],
+        ["13:30-14:20", "家族保單拓客要領", "馮瑞霞（瑞眾持續績優明星）"],
+        ["14:20-15:10", "IP 打造與直播獲客", "李洋（明亞北京頂級銷冠、直播億級保費締造者）"],
+        ["15:10-15:30", "休息", ""],
+        ["15:30-16:20", "職業轉型與保險從業成長", "錢文曦（太平人壽品質新生態代言人）"],
+        ["16:20-17:10", "企業家客戶的銷售邏輯", "曹紀平（TMC 千萬圓桌會創始會員，連續二十二年山東省銷售冠軍）"],
+        ["17:10-18:30", "晚餐休息", ""],
+        ["18:30-21:30", "CMF 保險明星之夜", "地點：主會場。特邀嘉賓：魏建宏團隊、安建平團隊、泰國精英團隊等眾多保險之星歌舞串燒"]
+      ]},
+      { id: "d7", title: "DAY 7｜7/20 尾篇：探討保險新生態之策", rows: [
+        ["上午場", "主會場課程", "版主：徐千水、韓綱"],
+        ["08:30-09:20", "以質為王・精兵致遠——新行銷時代的高績優成長路徑", "余巧琴（平安高品質轉型代言人、高客服務典範、精兵團隊標杆）"],
+        ["09:20-10:10", "人生經營三部曲——保險的智慧", "王辰（清華才子，CMF 特約首席講師）"],
+        ["10:10-10:20", "休息", ""],
+        ["10:20-11:10", "新經濟週期下，高客資產配置的保險核心邏輯", "趙楊（上海分公司資深業務總監、CMF 國際十大保險明星、太保壽險功勳導師）"],
+        ["11:10-12:00", "如何建構保險新生態", "CMF 主席團（劉朝霞、李江紅、盧美、葉雲燕、吳征宇等）"],
+        ["12:00-13:30", "午餐休息", ""],
+        ["下午場", "CMF 嘉年華", "嘉賓主持：王妮、春雨"],
+        ["13:30-14:10", "法商智慧：高客風險破解", "國旭（京師律所合夥人、家族財富管理法律專家）"],
+        ["14:10-15:10", "國學與保險行銷", "趙玉平（中央電視台《百家講壇》最具人氣主講人，中國十大國學專家，管理學博士）"],
+        ["15:10-15:50", "休息及節目", ""],
+        ["15:50-16:40", "建構保險新生態", "林海川（CMF 大會創始人之一，CMF 大會執行祕書長）"],
+        ["16:40-17:10", "柔韌的力量：女性企業家的破局與成長", "李巍（新希望集團聯合創始人）"],
+        ["17:10-17:30", "精彩再現，再見濟南，相約長沙——閉幕式", ""]
       ]}
     ];
 
@@ -228,16 +233,25 @@
     function updateCountdown() {
       const now = new Date();
       const dayMs = 86400000;
-      const toStart = Math.ceil((tripStart - now) / dayMs);
+      const toDeparture = departureTime - now;
+      const toStart = Math.max(0, Math.floor(toDeparture / dayMs));
       const fromStart = Math.floor((now - tripStart) / dayMs) + 1;
-      if (toStart > 0) {
-        $("#countdown").textContent = `${toStart} 天`;
+      const countdownDays = $("#countdownDays");
+      const countdownClock = $("#countdownClock");
+      if (toDeparture > 0) {
+        const hours = Math.floor((toDeparture % dayMs) / 3600000);
+        const minutes = Math.floor((toDeparture % 3600000) / 60000);
+        const seconds = Math.floor((toDeparture % 60000) / 1000);
+        countdownDays.textContent = `${toStart} 天`;
+        countdownClock.textContent = `${String(hours).padStart(2, "0")} 時 ${String(minutes).padStart(2, "0")} 分 ${String(seconds).padStart(2, "0")} 秒`;
         $("#todayHint").textContent = `距離出發 ${toStart} 天。`;
       } else if (now <= tripEnd) {
-        $("#countdown").textContent = `第 ${fromStart} 天`;
+        countdownDays.textContent = `第 ${fromStart} 天`;
+        countdownClock.textContent = "旅程進行中";
         $("#todayHint").textContent = `今日第 ${fromStart} 天。`;
       } else {
-        $("#countdown").textContent = "已完成";
+        countdownDays.textContent = "已完成";
+        countdownClock.textContent = "旅程已結束";
         $("#todayHint").textContent = "查看行程與課程資料。";
       }
     }
@@ -286,13 +300,17 @@
 
     function renderCourses() {
       $("#courseList").innerHTML = courses.map((day, index) => {
-        const open = index === 0;
+        const featuredDay = day.rows.some((row) => row.join("").includes("吳修毅"));
+        const open = featuredDay || (!courses.some((item) => item.rows.some((row) => row.join("").includes("吳修毅"))) && index === 0);
         const rows = day.rows.map((row) => {
           const search = normalized(row.join(" "));
+          const sectionRow = /專場|上午場|下午場/.test(row[0]);
+          const featured = row.join("").includes("吳修毅");
           return `
-            <div class="course-row" data-search="${esc(search)}">
+            <div class="course-row${sectionRow ? " course-section-row" : ""}${featured ? " featured-course-row" : ""}" data-search="${esc(search)}">
               <div class="course-time">${esc(row[0])}</div>
               <div>
+                ${featured ? '<div class="featured-note"><span class="featured-badge">本團主角</span><span>7/19 10:20｜吳修毅</span></div>' : ""}
                 <div class="course-topic">${esc(row[1])}</div>
                 ${row[2] ? `<div class="course-speaker">${esc(row[2])}</div>` : ""}
               </div>
@@ -302,7 +320,7 @@
         return `
           <article class="course-day reveal" data-course="${esc(day.id)}">
             <button class="course-head" type="button" aria-expanded="${open ? "true" : "false"}">
-              <span>${esc(day.title)}</span><span>${open ? "收合" : "展開"}</span>
+              <span>${esc(day.title)}${featuredDay ? '<em class="course-head-badge">本團主角</em>' : ""}</span><span>${open ? "收合" : "展開"}</span>
             </button>
             <div class="course-rows" ${open ? "" : 'style="display:none"'}>${rows}</div>
           </article>
@@ -342,6 +360,27 @@
         }
       });
       $("#courseEmpty").hidden = visible > 0;
+    }
+
+    function focusFeaturedCourse() {
+      setActivePage("course");
+      const featured = $(".featured-course-row");
+      if (!featured) return;
+      const day = featured.closest(".course-day");
+      const head = day?.querySelector(".course-head");
+      const rows = day?.querySelector(".course-rows");
+      if (head && rows) {
+        rows.style.display = "block";
+        head.setAttribute("aria-expanded", "true");
+        head.lastElementChild.textContent = "收合";
+      }
+      requestAnimationFrame(() => {
+        const top = window.scrollY + featured.getBoundingClientRect().top - 170;
+        window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+        featured.classList.add("featured-focus");
+        clearTimeout(focusFeaturedCourse.timer);
+        focusFeaturedCourse.timer = setTimeout(() => featured.classList.remove("featured-focus"), 1800);
+      });
     }
 
     function renderPlaces() {
@@ -520,6 +559,7 @@
         button.addEventListener("click", () => setActivePage(button.dataset.tab));
       });
       $("#prepShortcut").addEventListener("click", () => setActivePage("prep"));
+      $("#featuredCourseJump").addEventListener("click", focusFeaturedCourse);
       document.addEventListener("click", (event) => {
         const link = event.target.closest('a[href^="#"]');
         if (!link) return;
@@ -533,6 +573,7 @@
     }
 
     updateCountdown();
+    setInterval(updateCountdown, 1000);
     renderDays();
     renderCourses();
     renderPlaces();
